@@ -1,0 +1,4 @@
+package grabbers
+
+class TokenGrabber {
+}
