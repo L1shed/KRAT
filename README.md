@@ -14,7 +14,7 @@ A RAT (Remote Access Trojan) written in Kotlin.
 ```sh
 java -jar KRAT.jar <webhook-link>
 ```
-3.
+3. The program will connect to your Discord bot and ask for
 
 ## Stack
 - [Kotlin](https://kotlinlang.org/)

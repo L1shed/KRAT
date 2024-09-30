@@ -65,7 +65,7 @@ object FileUtils {
 
     fun send(file: File) {
         System.getenv("HOME")
-        Main.generateWebhook().apply {
+        Discord.sendWebhook().apply {
             attachments.add(file)
             execute()
         }

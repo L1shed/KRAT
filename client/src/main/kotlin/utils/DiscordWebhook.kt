@@ -105,8 +105,6 @@ class DiscordWebhook(private val url: String) {
             stream.write("Content-Type: application/octet-stream\r\n\r\n".toByteArray())
             stream.write(it.readBytes())
             stream.write("\r\n".toByteArray())
-//            stream.flush()
-//            stream.close()
         }
         stream.write("--$boundary--\r\n".toByteArray())
 

