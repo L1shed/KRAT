@@ -1,3 +1,5 @@
+### Current status: 🟢[Undetected](https://virustotal.com)
+
 # KRAT
 
 A RAT (Remote Access Trojan) written in Kotlin.

@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/client/src/main/kotlin/Discord.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Split in 2 modules: client and server">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/KRAT.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Screen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/Screen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/SystemWatcher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/SystemWatcher.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/grabbers/TokenGrabber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/grabbers/TokenGrabber.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/utils/DiscordWebhook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/utils/DiscordWebhook.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/utils/FileUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/utils/FileUtils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +127,7 @@
       <workItem from="1727605465451" duration="8953000" />
       <workItem from="1727717826110" duration="13000" />
       <workItem from="1727718949798" duration="111000" />
-      <workItem from="1727719085882" duration="3635000" />
+      <workItem from="1727719085882" duration="4440000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -146,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727720868208</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Split in 2 modules: client and server">
+      <option name="closed" value="true" />
+      <created>1727723369451</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727723369451</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +153,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Split in 2 modules: client, server" />
+    <MESSAGE value="Split in 2 modules: client and server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Split in 2 modules: client and server" />
   </component>
 </project>
