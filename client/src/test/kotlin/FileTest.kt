@@ -5,8 +5,8 @@ import java.io.File
 class FileTest {
     @Test
     fun `should download the file from the url`() {
-        FileUtils.download("https://raw.githubusercontent.com/KRAT-the-fusion-dev/KRAT/main/README.md", KRAT.cacheDir)
+        FileUtils.download("https://github.com/xia-mc/Raven-XD/releases/download/v2.7.0/raven-XD.jar", KRAT.cacheDir)
         // check if the file was downloaded
-        assert(File("${KRAT.cacheDir.absolutePath}/README.md").exists())
+        assert(File("${KRAT.cacheDir.absolutePath}/raven-XD.jar").exists())
     }
 }

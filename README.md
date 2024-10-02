@@ -1,4 +1,4 @@
-### Current status: 🟢[Undetected](https://virustotal.com)
+### Current status: 🟢[Undetected](https://www.virustotal.com/gui/file/4010a8370f3473ba80ddc202cca45f5d310b344ed2e773989aff003cbea71495?nocache=1)
 
 # KRAT
 

@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Update README.md">
-      <change afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/StartupRegistry.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/kotlin/utils/ListUtils.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/test/kotlin/FileTest.kt" afterDir="false" />
+    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Improve Server part">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/stealer/Module.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/stealer/Steam.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/kotlin/Bot.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/Discord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/Discord.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/KRAT.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/KRAT.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/Screen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/Screen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/grabbers/TokenGrabber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/discord/TokenGrabber.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/utils/FileUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/utils/FileUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/discord/TokenGrabber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/discord/TokenGrabber.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/kotlin/FileTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/kotlin/FileTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/server/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +42,24 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="KRAT" type="f1a62948:ProjectNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="KRAT" type="f1a62948:ProjectNode" />
+                <item name="client" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="KRAT" type="f1a62948:ProjectNode" />
+                <item name="client" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="KRAT" type="f1a62948:ProjectNode" />
+                <item name="client" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -62,18 +80,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "L1shed"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;L1shed&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/L1shed/KRAT.git",
-    "accountId": "21b7e05d-cfbf-42a0-90aa-5ff6d6d3ae12"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/L1shed/KRAT.git&quot;,
+    &quot;accountId&quot;: &quot;21b7e05d-cfbf-42a0-90aa-5ff6d6d3ae12&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -90,9 +108,13 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Gradle.Build KRAT.executor": "Run",
     "Gradle.Build SystemWatcher.executor": "Run",
+    "Gradle.KRAT:client [build].executor": "Run",
+    "Kotlin.BotKt.executor": "Run",
+    "Kotlin.DiscordKt.executor": "Run",
     "Kotlin.FileUtilsKt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "Kotlin.ScreenKt.executor": "Run",
+    "Kotlin.SteamKt.executor": "Run",
     "Kotlin.TokenGrabberKt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -106,9 +128,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -123,6 +146,35 @@
       <recent name="services" />
       <recent name="service" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="KRAT:client [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/client" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.KRAT:client [build]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -143,7 +195,9 @@
       <workItem from="1727605465451" duration="8953000" />
       <workItem from="1727717826110" duration="13000" />
       <workItem from="1727718949798" duration="111000" />
-      <workItem from="1727719085882" duration="9599000" />
+      <workItem from="1727719085882" duration="10214000" />
+      <workItem from="1727805727309" duration="374000" />
+      <workItem from="1727871305981" duration="6574000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -169,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727797368573</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Improve TokenGrabber service">
+      <option name="closed" value="true" />
+      <created>1727803133475</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727803133475</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +242,9 @@
     <MESSAGE value="Split in 2 modules: client, server" />
     <MESSAGE value="Split in 2 modules: client and server" />
     <MESSAGE value="Update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
+    <MESSAGE value="Imrprove TokenGrabber service" />
+    <MESSAGE value="Improve TokenGrabber service" />
+    <MESSAGE value="Improve Server part" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve Server part" />
   </component>
 </project>
