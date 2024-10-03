@@ -20,18 +20,29 @@ java -jar KRAT.jar <webhook-link>
 ```
 
 ## On-demand actions
-- `!webcam`: take a webcam capture and send it
-- `!screenshot`: take a screenshot and send it
-- `!filtree`: sends the victim's file tree
-- `!upload <link> <absolute-path>`: upload a file to the victim
-- `!download <absolute-path>`: download a file from the victim
-- `!run <file>`: execute a file on the victim's computer
-- `!delete <absolute-path>`: delete a file from the victim's computer
-- 
+- `/computers`: get all infected computers
+- `/webcam`: take a webcam capture and send it
+- `/screenshot`: take a screenshot and send it
+- `/filetree`: sends the victim's file tree
+- `/upload <link> <absolute-path>`: upload a file to the victim
+- `/download <absolute-path>`: download a file from the victim
+- `/run <file>`: execute a file on the victim's computer
+- `/delete <absolute-path>`: delete a file from the victim's computer
 
 [//]: # (3. The program will connect to your Discord bot and ask for configuration)
 
 ## Stack
 - [Kotlin](https://kotlinlang.org/)
+- [Ktor](https://ktor.io/) (client-server communication)
+- [DiscordKt](https://github.com/DiscordKt/DiscordKt)
 - [Kord](https://kordlib.github.io/kord/)
 - [webcam-capture](https://github.com/sarxos/webcam-capture)
+
+## Tailored software
+Do you need private software customized to your specific needs?
+
+Contact me on Discord : **_@lished_**
+
+## Disclaimer
+
+Educational purposes only.
