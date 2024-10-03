@@ -7,7 +7,7 @@ plugins {
 
 dependencies {
     testImplementation(kotlin("test"))
-    implementation("dev.kord:kord-core:0.14.0")
+    implementation("me.jakejmattson:DiscordKt:0.24.0")
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.2")
 }
 
