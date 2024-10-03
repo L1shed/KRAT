@@ -10,6 +10,7 @@ dependencies {
     implementation("net.java.dev.jna:jna-platform:5.15.0")
     implementation("org.json:json:20240303")
     implementation("com.github.sarxos:webcam-capture:0.3.12")
+    implementation("io.github.cdimascio:dotenv-kotlin:6.4.2")
 }
 
 tasks.test {

