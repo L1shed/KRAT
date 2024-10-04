@@ -7,8 +7,10 @@ import utils.DiscordWebhook
 import utils.ListUtils.removeDuplicates
 
 object Discord {
+    val url = dotenv()["WEBHOOK_URL"]
+
     fun webhook(): DiscordWebhook {
-        return DiscordWebhook(dotenv()["WEBHOOK_URL"]).apply {
+        return DiscordWebhook(url).apply {
             username = user
         }
     }

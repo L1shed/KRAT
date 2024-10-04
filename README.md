@@ -33,6 +33,7 @@ java -jar KRAT.jar <webhook-link>
 
 ## Stack
 - [Kotlin](https://kotlinlang.org/)
+- [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) (asynchronous programming)
 - [Ktor](https://ktor.io/) (client-server communication)
 - [DiscordKt](https://github.com/DiscordKt/DiscordKt)
 - [Kord](https://kordlib.github.io/kord/)
