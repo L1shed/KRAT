@@ -1,12 +1,15 @@
 package bot
 
-import io.github.cdimascio.dotenv.dotenv
 import me.jakejmattson.discordkt.dsl.bot
 
-fun main() {
-    val env = dotenv()
+fun main(args: Array<String>) {
+    if (args.isEmpty()) {
+        System.err.println("Please provide your Discord bot token as an argument")
+        return
+    }
 
-    bot(env["BOT_TOKEN"]) {
+    val token = args[0]
+    bot(token) {
 
     }
 }

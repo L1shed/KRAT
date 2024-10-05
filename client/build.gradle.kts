@@ -1,9 +1,8 @@
+val ktorVersion: String by project
+
 plugins {
     kotlin("jvm")
 }
-
-//group = "me.lished"
-//version = "1.0-SNAPSHOT"
 
 dependencies {
     testImplementation(kotlin("test"))
@@ -12,6 +11,10 @@ dependencies {
     implementation("com.github.sarxos:webcam-capture:0.3.12")
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
+    // Ktor
+    implementation("io.ktor:ktor-client-core:$ktorVersion")
+    implementation("io.ktor:ktor-client-cio:$ktorVersion")
+    implementation("io.ktor:ktor-client-websockets:$ktorVersion")
 }
 
 tasks.test {
