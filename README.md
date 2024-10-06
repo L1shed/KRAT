@@ -13,10 +13,10 @@ A RAT (Remote Access Trojan) written in Kotlin.
 
 ## Usage
 1. Download the latest release and put it on a server
-2. Run the `.jar` file with your Discord webhook link as parameter
+2. Run the `KRAT-server.jar` file with your Discord bot token as parameter
 
 ```sh
-java -jar KRAT.jar <webhook-link>
+java -jar KRAT-server.jar <bot-token>
 ```
 
 ## On-demand actions
