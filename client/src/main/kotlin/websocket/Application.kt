@@ -43,7 +43,7 @@ suspend fun DefaultClientWebSocketSession.outputMessages() {
 
 suspend fun DefaultClientWebSocketSession.inputMessages() {
     while (true) {
-        val message = readLine() ?: ""
+        val message = readln()
         if (message.equals("exit", true)) return
         try {
             send(Frame.Text(message))

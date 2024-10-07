@@ -6,10 +6,12 @@ import dev.kord.core.entity.Message
 import dev.kord.core.entity.channel.MessageChannel
 import dev.kord.rest.builder.message.embed
 import dev.kord.x.emoji.Emojis
+import io.ktor.util.logging.Logger
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
+import sun.rmi.runtime.Log
 import kotlin.collections.component1
 import kotlin.collections.component2
 
@@ -27,8 +29,6 @@ object StatusChannel {
                 (if (online) Emojis.greenCircle else Emojis.redCircle).toString() + " : **${client}**"
             }
         }
-        status["john"] = true
-        send()
     }
 
     suspend fun send() {
@@ -46,6 +46,7 @@ object StatusChannel {
     }
 
     fun online(user: String) {
+        println("ONLINE: $user")
         status[user] = true
         CoroutineScope(Dispatchers.IO).launch {
             send()
