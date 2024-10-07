@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Bot" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="bot.BotKt" />
-    <module name="KRAT.server.main" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>
