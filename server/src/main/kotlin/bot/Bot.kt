@@ -14,6 +14,7 @@ fun main(args: Array<String>) {
         bot(System.getenv("DISCORD_BOT_TOKEN")) {}
     }
 
+
     embeddedServer(Netty, port = 8080, host = "127.0.0.1") {
         module()
     }.start(wait = true)

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HttpClientEndpointsTabState">
+    <option name="requestToText" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;ab2cc25ac3ff5b338829d3bd8c10beba163b8b7d&quot; value=&quot;###&amp;#10;WEBSOCKET ws://localhost/echo&quot; /&gt;&#10;  &lt;entry key=&quot;8b02de9afd22fa9a63f01d6645a6351a24108bc0&quot; value=&quot;###&amp;#10;GET http://localhost/&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+  </component>
+</project>

@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Startup scripts">
-      <change afterPath="$PROJECT_DIR$/server/src/main/kotlin/bot/StatusChannel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Connection.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="WebSockets refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/Discord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/Discord.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/discord/TokenGrabber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/discord/TokenGrabber.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands.md" beforeDir="false" afterPath="$PROJECT_DIR$/commands.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/server/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/bot/Bot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/bot/Bot.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/bot/commands/config.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/bot/commands/config.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Application.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,47 +99,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.Build KRAT.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build SystemWatcher.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.KRAT:client [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.KRAT:server [:server:bot.BotKt.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ApplicationKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.BotKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.DiscordKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.FileUtilsKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ScreenKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.SteamKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.TokenGrabberKt.executor&quot;: &quot;Run&quot;,
-    &quot;Ktor.ApplicationKt.executor&quot;: &quot;Run&quot;,
-    &quot;Ktor.BotKt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-21&quot;,
-    &quot;jdk.selected.JDK&quot;: &quot;corretto-21&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/drsna/IdeaProjects/KRAT&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Gradle.Build KRAT.executor": "Run",
+    "Gradle.Build SystemWatcher.executor": "Run",
+    "Gradle.KRAT:client [build].executor": "Run",
+    "Gradle.KRAT:server [:server:bot.BotKt.main()].executor": "Run",
+    "Kotlin.ApplicationKt.executor": "Run",
+    "Kotlin.BotKt.executor": "Run",
+    "Kotlin.DiscordKt.executor": "Run",
+    "Kotlin.FileUtilsKt.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.ScreenKt.executor": "Run",
+    "Kotlin.SteamKt.executor": "Run",
+    "Kotlin.TokenGrabberKt.executor": "Run",
+    "Ktor.ApplicationKt.executor": "Run",
+    "Ktor.BotKt.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-21",
+    "jdk.selected.JDK": "corretto-21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/drsna/IdeaProjects/KRAT",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;jdk.preference.JDK&quot;: [
-      &quot;21=C:/Users/drsna/.jdks/corretto-21.0.4&quot;
+  "keyToStringList": {
+    "jdk.preference.JDK": [
+      "21=C:/Users/drsna/.jdks/corretto-21.0.4"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
       <recent name="bot" />
@@ -162,14 +150,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Bot">
-    <configuration name="Bot" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="bot.BotKt" />
-      <module name="KRAT.server.main" />
-      <option name="PROGRAM_PARAMETERS" value="MTI5MTAzMTM1OTE2NjQ4MDM4NA.Gc8Dhp.DAgSNzmjED5AGYhyPBbsqd8K0Xsd3gyrMfJDEA" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="KRAT:client [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -202,14 +182,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -230,6 +202,8 @@
       <workItem from="1728023452933" duration="2714000" />
       <workItem from="1728117047233" duration="13088000" />
       <workItem from="1728140247146" duration="5200000" />
+      <workItem from="1728198697924" duration="5529000" />
+      <workItem from="1728204294778" duration="67000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -327,7 +301,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728142330566</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Client status handling">
+      <option name="closed" value="true" />
+      <created>1728199818356</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1728199818356</updated>
+    </task>
+    <task id="LOCAL-00014" summary="WebSockets refactor">
+      <option name="closed" value="true" />
+      <created>1728322852253</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1728322852253</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,6 +347,8 @@
     <MESSAGE value="Coroutines integration" />
     <MESSAGE value="Switch to Ktor WebSockets" />
     <MESSAGE value="Startup scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Startup scripts" />
+    <MESSAGE value="Client status handling" />
+    <MESSAGE value="WebSockets refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="WebSockets refactor" />
   </component>
 </project>
