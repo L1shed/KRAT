@@ -13,25 +13,34 @@ import io.ktor.websocket.Frame
 import io.ktor.websocket.close
 import io.ktor.websocket.readText
 
-fun Application.module() {
-    install(WebSockets)
+object Application {
+    private val connections = mutableSetOf<Connection>()
 
-    routing {
-        val connections = mutableSetOf<Connection>()
-        webSocket("/pool") {
-            val thisConnection = Connection(this)
-            connections += thisConnection
-            StatusChannel.online(thisConnection.name)
-            for (frame in incoming) {
-                frame as? Frame.Text ?: continue
-                when (frame.readText()) {
-                    "ping" -> send(Frame.Text("pong"))
-                    "close" -> close(CloseReason(CloseReason.Codes.NORMAL, "Client said CLOSE"))
-                    else -> send(Frame.Text("Unknown command ${frame.readText()}"))
+    fun Application.module() {
+        install(WebSockets)
+
+        routing {
+            webSocket("/pool") {
+                val thisConnection = Connection(this)
+                connections += thisConnection
+                StatusChannel.online(thisConnection.name)
+                for (frame in incoming) {
+                    frame as? Frame.Text ?: continue
+                    when (frame.readText()) {
+                        "ping" -> send(Frame.Text("pong"))
+                        "close" -> close(CloseReason(CloseReason.Codes.NORMAL, "Client said CLOSE"))
+                        else -> send(Frame.Text("Unknown command ${frame.readText()}"))
+                    }
                 }
+                StatusChannel.offline(thisConnection.name)
+                connections -= thisConnection
             }
-            StatusChannel.offline(thisConnection.name)
-            connections -= thisConnection
+        }
+    }
+
+    suspend fun sendAll(text: String) {
+        connections.forEach {
+            it.session.send(Frame.Text(text = text))
         }
     }
 }

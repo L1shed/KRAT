@@ -1,13 +1,12 @@
 package bot
 
-import io.ktor.server.engine.embeddedServer
-import io.ktor.server.netty.Netty
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import me.jakejmattson.discordkt.dsl.bot
-import websocket.module
+import websocket.Application.module
 
 fun main() {
     CoroutineScope(Dispatchers.IO).launch {

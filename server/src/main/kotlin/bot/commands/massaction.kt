@@ -2,18 +2,23 @@ package bot.commands
 
 import me.jakejmattson.discordkt.arguments.AnyArg
 import me.jakejmattson.discordkt.commands.commands
+import websocket.Application
 
 fun massaction() = commands("Mass Action") {
-    slash("request", "Every computers make a request to the given ip address/domain") {
+    slash("request", "Every computers ping the given ip address/domain") {
         execute(AnyArg("address", "The address to ping")) {
             val address = args.first
 
-            // TODO: Send instructions to all computers via websocket
+            // TODO: Serialized Frame handling
+            //  - proper instruction validation
+            //  - typed s-object requests
+            Application.sendAll("ping:$address")
+
         }
     }
 
-    slash("run") {
+    /*slash("run") {
 
-    }
+    }*/
 
 }

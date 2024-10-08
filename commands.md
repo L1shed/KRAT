@@ -10,6 +10,11 @@
 |----------|-----------|-----------------------------------------------|
 | config   |           | Configure the channel for the bot to post in. |
 
+## Mass Action
+| Commands | Arguments | Description                                                   |
+|----------|-----------|---------------------------------------------------------------|
+| request  | address   | Every computers make a request to the given ip address/domain |
+
 ## Status
 | Commands  | Arguments | Description                         |
 |-----------|-----------|-------------------------------------|

@@ -5,6 +5,8 @@ import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.websocket.DefaultClientWebSocketSession
 import io.ktor.client.plugins.websocket.WebSockets
 import io.ktor.client.plugins.websocket.webSocket
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
 import io.ktor.http.HttpMethod
 import io.ktor.websocket.Frame
 import io.ktor.websocket.readText
@@ -45,11 +47,28 @@ suspend fun DefaultClientWebSocketSession.inputMessages() {
     while (true) {
         val message = readln()
         if (message.equals("exit", true)) return
-        try {
+
+        if (message.startsWith("ping:")) {
+            ping(message.substring(5))
+            send(Frame.Text("pinged successfully"))
+        } else {
             send(Frame.Text(message))
+        }
+        println("RECEIVED: $message")
+    }
+}
+
+fun ping(address: String): Boolean {
+    val client = HttpClient()
+
+    return runBlocking {
+        try {
+            val response: HttpResponse = client.get("http://$address")
+            response.status.value in 200..299 // Check if the response status is in the success range
         } catch (e: Exception) {
-            println("Error while sending: " + e.localizedMessage)
-            return
+            false // If there's an exception, the IP is not reachable
+        } finally {
+            client.close()
         }
     }
 }

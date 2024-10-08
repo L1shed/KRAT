@@ -4,6 +4,7 @@ import dev.kord.x.emoji.Emojis
 import me.jakejmattson.discordkt.arguments.ChoiceArg
 import me.jakejmattson.discordkt.commands.commands
 
+@Suppress("unused")
 fun status() = commands("Status") {
     val clientsStatus = mapOf<String, Boolean>( //dummy data
         "client1" to true,
