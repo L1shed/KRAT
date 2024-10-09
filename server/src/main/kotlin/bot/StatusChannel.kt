@@ -1,9 +1,13 @@
 package bot
 
+import dev.kord.common.entity.DiscordGuild
+import dev.kord.common.entity.Snowflake
 import dev.kord.core.behavior.channel.createEmbed
 import dev.kord.core.behavior.edit
 import dev.kord.core.entity.Message
+import dev.kord.core.entity.channel.Channel
 import dev.kord.core.entity.channel.MessageChannel
+import dev.kord.core.entity.channel.TextChannel
 import dev.kord.rest.builder.message.embed
 import dev.kord.x.emoji.Emojis
 import io.ktor.util.logging.Logger
@@ -16,11 +20,10 @@ import kotlin.collections.component1
 import kotlin.collections.component2
 
 object StatusChannel {
-    lateinit var channel: MessageChannel
     lateinit var message: Message
-    val status = mutableMapOf<String, Boolean>()
+    private val status = mutableMapOf<String, Boolean>()
 
-    suspend fun initialize() {
+    suspend fun initialize(channel: TextChannel) {
         channel.messages.toList().forEach { if (it.author?.isBot == true) it.delete() }
 
         message = channel.createEmbed {
@@ -31,7 +34,8 @@ object StatusChannel {
         }
     }
 
-    suspend fun send() {
+    suspend fun update(user: String) {
+        status[user] = !status.getOrDefault(user, false)
         if (!::message.isInitialized) return
 
         message.edit {
@@ -43,20 +47,5 @@ object StatusChannel {
             }
         }
 
-    }
-
-    fun online(user: String) {
-        println("ONLINE: $user")
-        status[user] = true
-        CoroutineScope(Dispatchers.IO).launch {
-            send()
-        }
-    }
-
-    fun offline(user: String) {
-        status[user] = false
-        CoroutineScope(Dispatchers.IO).launch {
-            send()
-        }
     }
 }

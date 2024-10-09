@@ -36,7 +36,15 @@ suspend fun DefaultClientWebSocketSession.outputMessages() {
     try {
         for (message in incoming) {
             message as? Frame.Text ?: continue
-            println(message.readText())
+            val text = message.readText()
+            println("RECEIVED: ${text}")
+            if (text.startsWith("ping:")) {
+                if (ping(text.substring(5)))
+                    send(Frame.Text("pinged successfully"))
+                else
+                    send(Frame.Text("could not ping"))
+            }
+
         }
     } catch (e: Exception) {
         println("Error while receiving: " + e.localizedMessage)
@@ -47,14 +55,12 @@ suspend fun DefaultClientWebSocketSession.inputMessages() {
     while (true) {
         val message = readln()
         if (message.equals("exit", true)) return
-
-        if (message.startsWith("ping:")) {
-            ping(message.substring(5))
-            send(Frame.Text("pinged successfully"))
-        } else {
+        try {
             send(Frame.Text(message))
+        } catch (e: Exception) {
+            println("Error while sending: " + e.localizedMessage)
+            return
         }
-        println("RECEIVED: $message")
     }
 }
 
@@ -66,7 +72,7 @@ fun ping(address: String): Boolean {
             val response: HttpResponse = client.get("http://$address")
             response.status.value in 200..299 // Check if the response status is in the success range
         } catch (e: Exception) {
-            false // If there's an exception, the IP is not reachable
+            false // The IP is not reachable
         } finally {
             client.close()
         }

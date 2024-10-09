@@ -23,7 +23,7 @@ object Application {
             webSocket("/pool") {
                 val thisConnection = Connection(this)
                 connections += thisConnection
-                StatusChannel.online(thisConnection.name)
+                StatusChannel.update(thisConnection.name)
                 for (frame in incoming) {
                     frame as? Frame.Text ?: continue
                     when (frame.readText()) {
@@ -32,7 +32,7 @@ object Application {
                         else -> send(Frame.Text("Unknown command ${frame.readText()}"))
                     }
                 }
-                StatusChannel.offline(thisConnection.name)
+                StatusChannel.update(thisConnection.name)
                 connections -= thisConnection
             }
         }

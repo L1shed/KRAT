@@ -5,15 +5,10 @@
 |-------------|--------------------------------|
 | [Argument]  | Argument is not required.      |
 
-## Config
-| Commands | Arguments | Description                                   |
-|----------|-----------|-----------------------------------------------|
-| config   |           | Configure the channel for the bot to post in. |
-
 ## Mass Action
-| Commands | Arguments | Description                                                   |
-|----------|-----------|---------------------------------------------------------------|
-| request  | address   | Every computers make a request to the given ip address/domain |
+| Commands | Arguments | Description                                      |
+|----------|-----------|--------------------------------------------------|
+| request  | address   | Every computers ping the given ip address/domain |
 
 ## Status
 | Commands  | Arguments | Description                         |
