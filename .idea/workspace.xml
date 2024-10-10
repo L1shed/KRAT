@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Mass Pinger">
+    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Status Handling">
+      <change afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/stealer/GetChromePass.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/client/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands.md" beforeDir="false" afterPath="$PROJECT_DIR$/commands.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/bot/Bot.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/bot/Bot.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/bot/StatusChannel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/bot/StatusChannel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/bot/commands/config.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Application.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,9 +68,9 @@
       <list>
         <option value="Class" />
         <option value="Ktor Test Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -104,48 +103,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.Build KRAT.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build SystemWatcher.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.KRAT:client [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.KRAT:server [:server:bot.BotKt.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ApplicationKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.BotKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.DiscordKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.FileUtilsKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ScreenKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.SteamKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.TokenGrabberKt.executor&quot;: &quot;Run&quot;,
-    &quot;Ktor.ApplicationKt.executor&quot;: &quot;Run&quot;,
-    &quot;Ktor.BotKt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-21&quot;,
-    &quot;jdk.selected.JDK&quot;: &quot;corretto-21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/drsna/IdeaProjects/KRAT&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Gradle.Build KRAT.executor": "Run",
+    "Gradle.Build SystemWatcher.executor": "Run",
+    "Gradle.KRAT:client [build].executor": "Run",
+    "Gradle.KRAT:server [:server:bot.BotKt.main()].executor": "Run",
+    "Kotlin.ApplicationKt.executor": "Run",
+    "Kotlin.BotKt.executor": "Run",
+    "Kotlin.DiscordKt.executor": "Run",
+    "Kotlin.FileUtilsKt.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.ScreenKt.executor": "Run",
+    "Kotlin.SteamKt.executor": "Run",
+    "Kotlin.TokenGrabberKt.executor": "Run",
+    "Ktor.ApplicationKt.executor": "Run",
+    "Ktor.BotKt.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-21",
+    "jdk.selected.JDK": "corretto-21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/drsna/IdeaProjects/KRAT",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;jdk.preference.JDK&quot;: [
-      &quot;21=C:/Users/drsna/.jdks/corretto-21.0.4&quot;
+  "keyToStringList": {
+    "jdk.preference.JDK": [
+      "21=C:/Users/drsna/.jdks/corretto-21.0.4"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
       <recent name="bot" />
@@ -354,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728395962832</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Status Handling">
+      <option name="closed" value="true" />
+      <created>1728482492257</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1728482492257</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,6 +396,7 @@
     <MESSAGE value="Apply run configurations" />
     <MESSAGE value="Mass Actions command" />
     <MESSAGE value="Mass Pinger" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mass Pinger" />
+    <MESSAGE value="Status Handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Status Handling" />
   </component>
 </project>

@@ -37,7 +37,7 @@ suspend fun DefaultClientWebSocketSession.outputMessages() {
         for (message in incoming) {
             message as? Frame.Text ?: continue
             val text = message.readText()
-            println("RECEIVED: ${text}")
+            println("RECEIVED: $text")
             if (text.startsWith("ping:")) {
                 if (ping(text.substring(5)))
                     send(Frame.Text("pinged successfully"))
