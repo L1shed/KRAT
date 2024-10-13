@@ -20,8 +20,9 @@ import kotlin.collections.component1
 import kotlin.collections.component2
 
 object StatusChannel {
-    lateinit var message: Message
-    private val status = mutableMapOf<String, Boolean>()
+    val status = mutableMapOf<String, Boolean>()
+
+    private lateinit var message: Message
 
     suspend fun initialize(channel: TextChannel) {
         channel.messages.toList().forEach { if (it.author?.isBot == true) it.delete() }

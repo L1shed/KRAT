@@ -14,6 +14,7 @@ import io.ktor.websocket.close
 import io.ktor.websocket.readText
 
 object Application {
+
     private val connections = mutableSetOf<Connection>()
 
     fun Application.module() {
@@ -38,9 +39,22 @@ object Application {
         }
     }
 
+    suspend fun send(victim: String, text: String) {
+        connections.forEach {
+            if (it.name == victim) {
+                it.session.send(
+                    Frame.Text(
+                        text = text
+                    )
+                )
+            }
+        }
+    }
+
     suspend fun sendAll(text: String) {
         connections.forEach {
             it.session.send(Frame.Text(text = text))
         }
     }
+
 }

