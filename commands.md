@@ -5,10 +5,11 @@
 |-------------|--------------------------------|
 | [Argument]  | Argument is not required.      |
 
-## Mass Action
-| Commands | Arguments | Description                                      |
-|----------|-----------|--------------------------------------------------|
-| request  | address   | Every computers ping the given ip address/domain |
+## Remote Actions
+| Commands | Arguments       | Description                                             |
+|----------|-----------------|---------------------------------------------------------|
+| request  | address         | Every computers ping the given ip address/domain        |
+| run      | command, victim | Silently run a console command on the victim's computer |
 
 ## Status
 | Commands  | Arguments | Description                         |

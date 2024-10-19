@@ -6,7 +6,7 @@ import me.jakejmattson.discordkt.commands.commands
 
 @Suppress("unused")
 fun status() = commands("Status") {
-    val clientsStatus = mapOf<String, Boolean>( //dummy data
+    val clientsStatus = mapOf( //dummy data
         "client1" to true,
         "client2" to false,
         "John" to false,
