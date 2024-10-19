@@ -1,6 +1,7 @@
 package websocket
 
 import bot.StatusChannel
+import io.ktor.serialization.kotlinx.*
 import models.informations.DiscordAccount
 import io.ktor.server.application.*
 import io.ktor.server.application.Application
@@ -8,6 +9,7 @@ import io.ktor.server.routing.*
 import io.ktor.server.websocket.*
 import io.ktor.websocket.*
 import io.netty.util.internal.logging.Slf4JLoggerFactory
+import kotlinx.serialization.json.Json
 import org.slf4j.LoggerFactory
 import org.slf4j.simple.SimpleLoggerFactory
 
@@ -16,7 +18,9 @@ object Application {
     private val connections = mutableSetOf<Connection>()
 
     fun Application.module() {
-        install(WebSockets)
+        install(WebSockets) {
+            contentConverter = KotlinxWebsocketSerializationConverter(Json)
+        }
 
         routing {
             webSocket("/pool") {
@@ -59,5 +63,4 @@ object Application {
             it.session.send(Frame.Text(text = text))
         }
     }
-
 }

