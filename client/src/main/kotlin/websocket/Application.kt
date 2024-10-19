@@ -5,19 +5,27 @@ import io.ktor.client.plugins.websocket.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
+import io.ktor.serialization.kotlinx.*
 import io.ktor.websocket.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import kotlinx.serialization.json.Json
+import java.util.*
+
+val messagesQueue: Queue<Any> = LinkedList()
 
 fun main() {
     val client = HttpClient {
-        install(WebSockets)
+        install(WebSockets) {
+            contentConverter = KotlinxWebsocketSerializationConverter(Json)
+        }
     }
     runBlocking {
         client.webSocket(method = HttpMethod.Get, host = "127.0.0.1", port = 8080, path = "/pool") {
+
             val messageOutputRoutine = launch { outputMessages() }
             val userInputRoutine = launch { inputMessages() }
 
@@ -54,12 +62,14 @@ suspend fun DefaultClientWebSocketSession.outputMessages() {
     }
 }
 
+
+
 suspend fun DefaultClientWebSocketSession.inputMessages() {
     while (true) {
-        val message = readln()
-        if (message.equals("exit", true)) return
+        val message = messagesQueue.poll() ?: continue
+
         try {
-            send(Frame.Text(message))
+            sendSerialized(message)
         } catch (e: Exception) {
             println("Error while sending: " + e.localizedMessage)
             return
