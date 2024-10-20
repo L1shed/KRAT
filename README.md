@@ -1,7 +1,6 @@
 > [!CAUTION]
+> This project is designed to demonstrate and expose vulnerabilities in devices.<br/>
 > Educational purposes only.
-> 
-> This project is designed to demonstrate and expose vulnerabilities in devices
 
 ### Current status: 🟢[Undetected](https://www.virustotal.com/gui/file/4010a8370f3473ba80ddc202cca45f5d310b344ed2e773989aff003cbea71495?nocache=1)
 
