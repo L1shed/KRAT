@@ -1,7 +1,8 @@
 > [!CAUTION]
-> Educational purposes only.<br/>
 > This project is designed to demonstrate and expose vulnerabilities in devices.<br/>
 > Beware! This malware is currently [undetected](https://www.virustotal.com/gui/file/4010a8370f3473ba80ddc202cca45f5d310b344ed2e773989aff003cbea71495?nocache=1) by popular antivirus.
+> 
+> Educational purposes only.
 
 [//]: # (### Current status: 🟢[Undetected]&#40;https://www.virustotal.com/gui/file/4010a8370f3473ba80ddc202cca45f5d310b344ed2e773989aff003cbea71495?nocache=1&#41;)
 
