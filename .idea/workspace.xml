@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Add test summary to CI flow">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/KRAT.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/KRAT.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/Screen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/Screen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/SystemWatcher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/SystemWatcher.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/Discord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/Discord.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/stealer/GetChromePass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/stealer/ChromePassword.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/utils/DiscordWebhook.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/utils/FileUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/utils/FileUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/test/kotlin/FileTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/kotlin/FileTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/bot/commands/remote.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/bot/commands/remote.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Application.kt" afterDir="false" />
-    </list>
+    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Introduce Dockerfile" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -620,7 +603,71 @@
       <option name="project" value="LOCAL" />
       <updated>1729500328997</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Fix jdk dist typo">
+      <option name="closed" value="true" />
+      <created>1729500445655</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1729500445655</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Fix jdk dist typo">
+      <option name="closed" value="true" />
+      <created>1729500534044</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1729500534044</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Fix file handling for CI tests">
+      <option name="closed" value="true" />
+      <created>1729500674981</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1729500674981</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Discord webhook -&gt; bot">
+      <option name="closed" value="true" />
+      <created>1729500692586</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1729500692586</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Remote actions commands&#10;webcam&#10;screenshot">
+      <option name="closed" value="true" />
+      <created>1729500715919</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1729500715919</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Various refactoring">
+      <option name="closed" value="true" />
+      <created>1729500749075</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1729500749075</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Update README.md">
+      <option name="closed" value="true" />
+      <created>1729500775842</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1729500775842</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Introduce Dockerfile">
+      <option name="closed" value="true" />
+      <created>1729500790270</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1729500790270</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,12 +685,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Split in 2 modules: client, server" />
-    <MESSAGE value="Split in 2 modules: client and server" />
-    <MESSAGE value="Imrprove TokenGrabber service" />
-    <MESSAGE value="Improve TokenGrabber service" />
-    <MESSAGE value="Improve Server part" />
-    <MESSAGE value="commands config (generated by DiscordKt)" />
     <MESSAGE value="Switch to DiscordKt" />
     <MESSAGE value="Coroutines integration" />
     <MESSAGE value="Switch to Ktor WebSockets" />
@@ -660,9 +701,15 @@
     <MESSAGE value="Webhook -&gt; Discord Bot on client" />
     <MESSAGE value="shared module" />
     <MESSAGE value="Clean sharded build classes and scrips" />
-    <MESSAGE value="Update README.md" />
     <MESSAGE value="Update gradle.yml" />
     <MESSAGE value="Add test summary to CI flow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add test summary to CI flow" />
+    <MESSAGE value="Fix jdk dist typo" />
+    <MESSAGE value="Fix file handling for CI tests" />
+    <MESSAGE value="Discord webhook -&gt; bot" />
+    <MESSAGE value="Remote actions commands&#10;webcam&#10;screenshot" />
+    <MESSAGE value="Various refactoring" />
+    <MESSAGE value="Update README.md" />
+    <MESSAGE value="Introduce Dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Introduce Dockerfile" />
   </component>
 </project>
