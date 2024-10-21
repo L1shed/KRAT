@@ -13,7 +13,6 @@ class FileTest {
 
         // check if the file was downloaded
         assert(file.exists())
-        file.
 
         // cleanup
         file.delete()
