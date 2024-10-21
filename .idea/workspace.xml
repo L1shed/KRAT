@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Introduce Dockerfile" />
+    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Fix compile error in test script" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -667,7 +667,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729500790270</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Introduce Dockerfile">
+      <option name="closed" value="true" />
+      <created>1729500956750</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1729500956750</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Fix compile error in test script">
+      <option name="closed" value="true" />
+      <created>1729501104424</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1729501104424</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -685,7 +701,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Switch to DiscordKt" />
     <MESSAGE value="Coroutines integration" />
     <MESSAGE value="Switch to Ktor WebSockets" />
     <MESSAGE value="Startup scripts" />
@@ -710,6 +725,7 @@
     <MESSAGE value="Various refactoring" />
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Introduce Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introduce Dockerfile" />
+    <MESSAGE value="Fix compile error in test script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix compile error in test script" />
   </component>
 </project>
