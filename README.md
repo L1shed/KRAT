@@ -1,8 +1,9 @@
 > [!CAUTION]
+> Educational purposes only.<br/>
 > This project is designed to demonstrate and expose vulnerabilities in devices.<br/>
-> Educational purposes only.
+> Beware! This malware is currently [undetected](https://www.virustotal.com/gui/file/4010a8370f3473ba80ddc202cca45f5d310b344ed2e773989aff003cbea71495?nocache=1) by popular antivirus.
 
-### Current status: 🟢[Undetected](https://www.virustotal.com/gui/file/4010a8370f3473ba80ddc202cca45f5d310b344ed2e773989aff003cbea71495?nocache=1)
+[//]: # (### Current status: 🟢[Undetected]&#40;https://www.virustotal.com/gui/file/4010a8370f3473ba80ddc202cca45f5d310b344ed2e773989aff003cbea71495?nocache=1&#41;)
 
 # KRAT
 
@@ -50,8 +51,7 @@ it can be compiled to run on any OS that has JVM.
 
 ## Stack
 - [Kotlin](https://kotlinlang.org/)
-- [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) (asynchronous programming)
-- [Ktor](https://ktor.io/) (client-server communication)
-- [DiscordKt](https://github.com/DiscordKt/DiscordKt)
-- [Kord](https://kordlib.github.io/kord/)
+- [Coroutines](https://github.com/Kotlin/kotlinx.coroutines): Asynchronous programming
+- [Ktor](https://ktor.io/): client-server communication
+- [DiscordKt](https://github.com/DiscordKt/DiscordKt) and [Kord](https://github.com/kordlib/kord): Discord API wrapper
 - [webcam-capture](https://github.com/sarxos/webcam-capture)
