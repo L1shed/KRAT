@@ -4,23 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Remote Terminal command">
-      <change afterPath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Content.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/kotlin/websocket/DiscordInformation.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Instruction.kt" afterDir="false" />
+    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Add test summary to CI flow">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/gradle.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gradle.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/client/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/KRAT.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/KRAT.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/Screen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/Screen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/SystemWatcher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/SystemWatcher.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/Discord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/Discord.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/discord/TokenGrabber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/discord/TokenGrabber.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands.md" beforeDir="false" afterPath="$PROJECT_DIR$/commands.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/server/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/bot/commands/status.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/bot/commands/status.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/stealer/GetChromePass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/services/stealer/ChromePassword.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/utils/DiscordWebhook.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/utils/FileUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/kotlin/utils/FileUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/kotlin/FileTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/kotlin/FileTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/bot/commands/remote.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/bot/commands/remote.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/kotlin/websocket/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/bot.properties" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/bot.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +47,17 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="KRAT" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="KRAT" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="KRAT" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -81,6 +92,7 @@
         <option value="Kotlin Object" />
         <option value="Kotlin File" />
         <option value="Kotlin Data Class" />
+        <option value="Kotlin Worksheet" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -89,9 +101,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;
+    }
+  ],
   &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;L1shed&quot;
+    &quot;state&quot;: &quot;OPEN&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
@@ -102,6 +118,9 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/server/src/main/kotlin/bot/commands/config.kt" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -117,12 +136,20 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.Client.executor": "Run",
+    "Docker.Dockerfile build.executor": "Run",
     "Gradle.Build KRAT.executor": "Run",
     "Gradle.Build SystemWatcher.executor": "Run",
+    "Gradle.FileTest.should download the file from the url.executor": "Run",
+    "Gradle.KRAT [build].executor": "Run",
+    "Gradle.KRAT [clean].executor": "Run",
+    "Gradle.KRAT [test].executor": "Run",
+    "Gradle.KRAT:client [:client:KRATKt.main()].executor": "Run",
     "Gradle.KRAT:client [build].executor": "Run",
     "Gradle.KRAT:server [:server:bot.BotKt.main()].executor": "Run",
     "Kotlin.ApplicationKt.executor": "Run",
     "Kotlin.BotKt.executor": "Run",
+    "Kotlin.DiscordAccountKt.executor": "Run",
     "Kotlin.DiscordKt.executor": "Run",
     "Kotlin.FileUtilsKt.executor": "Run",
     "Kotlin.GetChromePassKt.executor": "Run",
@@ -159,6 +186,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\drsna\IdeaProjects\KRAT\shared\src\main\kotlin\informations" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="websocket" />
     </key>
@@ -169,7 +199,82 @@
       <recent name="service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Bot">
+  <component name="RunManager" selected="Gradle.KRAT [test]">
+    <configuration name="Client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="KRATKt" />
+      <module name="KRAT.client.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTest.should download the file from the url" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":client:test" />
+            <option value="--tests" />
+            <option value="&quot;FileTest.should download the file from the url&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="KRAT [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--info" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="KRAT [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="KRAT:client [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -192,13 +297,39 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Dockerfile build" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="openjdk17-jdk-slim_build" />
+          <option name="buildCliOptions" value="--target build" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Application.Bot" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Docker.Dockerfile build" />
+      <item itemvalue="Gradle.FileTest.should download the file from the url" />
+      <item itemvalue="Gradle.KRAT [test]" />
+      <item itemvalue="Gradle.KRAT [build]" />
       <item itemvalue="Gradle.KRAT:client [build]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.KRAT:client [build]" />
+        <item itemvalue="Gradle.KRAT [test]" />
+        <item itemvalue="Gradle.FileTest.should download the file from the url" />
+        <item itemvalue="Docker.Dockerfile build" />
+        <item itemvalue="Docker.Dockerfile build" />
+        <item itemvalue="Gradle.KRAT [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -393,7 +524,103 @@
       <option name="project" value="LOCAL" />
       <updated>1728837451016</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Serialization">
+      <option name="closed" value="true" />
+      <created>1729339619723</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1729339619724</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Webhook -&gt; Discord Bot on client">
+      <option name="closed" value="true" />
+      <created>1729339638913</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1729339638913</updated>
+    </task>
+    <task id="LOCAL-00024" summary="shared module">
+      <option name="closed" value="true" />
+      <created>1729339654415</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1729339654415</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Clean sharded build classes and scrips">
+      <option name="closed" value="true" />
+      <created>1729341550074</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1729341550074</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Update README.md">
+      <option name="closed" value="true" />
+      <created>1729432194089</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1729432194089</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Update README.md">
+      <option name="closed" value="true" />
+      <created>1729432308982</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1729432308982</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Update README.md">
+      <option name="closed" value="true" />
+      <created>1729432331105</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1729432331105</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Update README.md">
+      <option name="closed" value="true" />
+      <created>1729432480302</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1729432480302</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Update README.md">
+      <option name="closed" value="true" />
+      <created>1729489359062</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1729489359062</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update README.md">
+      <option name="closed" value="true" />
+      <created>1729489663136</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1729489663136</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update gradle.yml">
+      <option name="closed" value="true" />
+      <created>1729498469771</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1729498469771</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Add test summary to CI flow">
+      <option name="closed" value="true" />
+      <created>1729500328997</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1729500328997</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,13 +638,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Split in 2 modules: client, server" />
     <MESSAGE value="Split in 2 modules: client and server" />
     <MESSAGE value="Imrprove TokenGrabber service" />
     <MESSAGE value="Improve TokenGrabber service" />
     <MESSAGE value="Improve Server part" />
-    <MESSAGE value="Update README.md" />
     <MESSAGE value="commands config (generated by DiscordKt)" />
     <MESSAGE value="Switch to DiscordKt" />
     <MESSAGE value="Coroutines integration" />
@@ -431,6 +656,13 @@
     <MESSAGE value="Status Handling" />
     <MESSAGE value="Chrome password stealer" />
     <MESSAGE value="Remote Terminal command" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remote Terminal command" />
+    <MESSAGE value="Serialization" />
+    <MESSAGE value="Webhook -&gt; Discord Bot on client" />
+    <MESSAGE value="shared module" />
+    <MESSAGE value="Clean sharded build classes and scrips" />
+    <MESSAGE value="Update README.md" />
+    <MESSAGE value="Update gradle.yml" />
+    <MESSAGE value="Add test summary to CI flow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add test summary to CI flow" />
   </component>
 </project>

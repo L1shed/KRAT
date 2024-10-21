@@ -9,7 +9,7 @@ sealed class SystemEvent {
 }
 
 class SystemWatcher(rootDirectory: Path, private val recursive: Boolean = false) {
-    val watchService: WatchService = FileSystems.getDefault().newWatchService()
+    private val watchService: WatchService = FileSystems.getDefault().newWatchService()
     private val watchKeys = mutableMapOf<WatchKey, Path>()
     val eventHandlers = mutableMapOf<Class<out SystemEvent>, (SystemEvent) -> Unit>()
 
