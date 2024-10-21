@@ -7,7 +7,7 @@
 [//]: # (### Current status: 🟢[Undetected]&#40;https://www.virustotal.com/gui/file/4010a8370f3473ba80ddc202cca45f5d310b344ed2e773989aff003cbea71495?nocache=1&#41;)
 
 # KRAT
-![](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+![](https://github.com/L1shed/KRAT/actions/workflows/gradle.yml/badge.svg)
 
 >A lightweight Asynchronous JVM-based RAT (Remote Access Trojan) written in Kotlin.
 
