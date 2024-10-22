@@ -7,7 +7,7 @@ sealed class SystemEvent {
     data class Modified(val path: Path) : SystemEvent()
     data class Deleted(val path: Path) : SystemEvent()
 }
-
+@Deprecated("unused")
 class SystemWatcher(rootDirectory: Path, private val recursive: Boolean = false) {
     private val watchService: WatchService = FileSystems.getDefault().newWatchService()
     private val watchKeys = mutableMapOf<WatchKey, Path>()

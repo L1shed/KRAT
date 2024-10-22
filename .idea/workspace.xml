@@ -4,7 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Fix compile error in test script" />
+    <list default="true" id="63a8afe6-bc74-49cb-bd8a-7deecca0b4ec" name="Changes" comment="Add action info badge">
+      <change afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/Hello.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/nativeMain/resources/run.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/nativeMain/resources/run.vbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/nativeMain/resources/runa.vbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/client/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/KRAT.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/KRAT.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/Screen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/Screen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/SystemWatcher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/SystemWatcher.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/Discord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/services/Discord.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/StartupRegistry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/services/StartupRegistry.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/discord/TokenGrabber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/services/discord/TokenGrabber.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/stealer/ChromePassword.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/services/stealer/ChromePassword.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/stealer/Module.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/services/stealer/Module.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/services/stealer/Steam.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/services/stealer/Steam.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/utils/FileUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/utils/FileUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/utils/ListUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/utils/ListUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/kotlin/websocket/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/kotlin/websocket/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/resources/run.bat" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeMain/resources/run _old.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/resources/run.vbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/kotlin/FileDownloadTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/nativeTest/kotlin/FileDownloadTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/server/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/build.gradle.kts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,12 +66,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="KRAT" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="KRAT" type="f1a62948:ProjectNode" />
                 <item name="client" type="2d1252cf:ModuleNode" />
               </path>
               <path>
@@ -73,9 +94,9 @@
         <option value="Class" />
         <option value="Ktor Test Class" />
         <option value="Kotlin Object" />
-        <option value="Kotlin File" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Worksheet" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -139,6 +160,7 @@
     "Kotlin.KRATKt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "Kotlin.ScreenKt.executor": "Run",
+    "Kotlin.StartupRegistryKt.executor": "Run",
     "Kotlin.SteamKt.executor": "Run",
     "Kotlin.TokenGrabberKt.executor": "Run",
     "Ktor.ApplicationKt.executor": "Run",
@@ -170,6 +192,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\drsna\IdeaProjects\KRAT\client\src\nativeTest\kotlin" />
+      <recent name="C:\Users\drsna\IdeaProjects\KRAT\client\src\nativeMain\resources" />
+      <recent name="C:\Users\drsna\IdeaProjects\KRAT\client\src\nativeMain\kotlin" />
+      <recent name="C:\Users\drsna\IdeaProjects\KRAT\client\src\nativeMain" />
       <recent name="C:\Users\drsna\IdeaProjects\KRAT\shared\src\main\kotlin\informations" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
@@ -182,7 +208,7 @@
       <recent name="service" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.KRAT [test]">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="KRATKt" />
       <module name="KRAT.client.main" />
@@ -683,7 +709,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729501104424</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Disable test&#10;waiting for workflow-side fix">
+      <option name="closed" value="true" />
+      <created>1729501454976</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1729501454976</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Add action info badge">
+      <option name="closed" value="true" />
+      <created>1729501750083</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1729501750083</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,8 +743,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Coroutines integration" />
-    <MESSAGE value="Switch to Ktor WebSockets" />
     <MESSAGE value="Startup scripts" />
     <MESSAGE value="Client status handling" />
     <MESSAGE value="WebSockets refactor" />
@@ -726,6 +766,8 @@
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Introduce Dockerfile" />
     <MESSAGE value="Fix compile error in test script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix compile error in test script" />
+    <MESSAGE value="Disable test&#10;waiting for workflow-side fix" />
+    <MESSAGE value="Add action info badge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add action info badge" />
   </component>
 </project>

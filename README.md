@@ -57,3 +57,21 @@ it can be compiled to run on any OS that has JVM.
 - [Ktor](https://ktor.io/): client-server communication
 - [DiscordKt](https://github.com/DiscordKt/DiscordKt) and [Kord](https://github.com/kordlib/kord): Discord API wrapper
 - [webcam-capture](https://github.com/sarxos/webcam-capture)
+
+# Deep Dive: How it works
+
+## Stage 1
+
+At this stage, the malware is tiny only downloads the `run.bat` file from the server and make it runs on every startup.
+If the latest version of the file can't be downloaded, the malware will use his backup version.
+
+## Stage 2
+
+Now, the malware will start connecting to the server via websockets.
+It will also steal every information possible from the victim's computer and send it to the server.
+
+Finally, the malware will start listening background precesses.
+
+## Discord
+
+The bot sends victim's info via a Discord server get instructions from commands.

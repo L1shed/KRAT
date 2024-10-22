@@ -30,15 +30,5 @@ fun main() {
         }
     }
 
-//    coroutineScope.cancel()
-
-    /*SystemWatcher(Paths.get("C:/Users/${.Main.user}/Downloads"), recursive = true).apply {
-        on<.SystemEvent.Created> { println("Created: ${it.path}") }
-        on<.SystemEvent.Modified> { println("Modified: ${it.path}") }
-        on<.SystemEvent.Deleted> { println("Deleted: ${it.path}") }
-
-        start()
-    }*/
-
 
 }

